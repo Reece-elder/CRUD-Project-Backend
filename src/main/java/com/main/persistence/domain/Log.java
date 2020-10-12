@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class ShipLog {
+public class Log {
 
 	@Id
 	@GeneratedValue
@@ -18,12 +18,12 @@ public class ShipLog {
 
 	// Constructors
 
-	public ShipLog() {
+	public Log() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public ShipLog(String shipName, String captainName, String shipClass, String origin, int cargo) {
+	public Log(String shipName, String captainName, String shipClass, String origin, int cargo) {
 		super();
 		// this.id = id;
 		this.shipName = shipName;
