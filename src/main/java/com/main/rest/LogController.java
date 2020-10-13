@@ -16,15 +16,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.main.persistence.domain.Log;
-import com.main.service.ShipLogService;
+import com.main.service.LogService;
 
 @RestController
 @CrossOrigin
 public class LogController {
 
-	private ShipLogService service;
+	private LogService service;
 
-	public LogController(ShipLogService service) {
+	public LogController(LogService service) {
 		super();
 		this.service = service;
 	}

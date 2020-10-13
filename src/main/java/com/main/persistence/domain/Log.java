@@ -2,13 +2,14 @@ package com.main.persistence.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Log {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String shipName;
 	private String captainName;
@@ -82,4 +83,44 @@ public class Log {
 	public void setCargo(int cargo) {
 		this.cargo = cargo;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Log other = (Log) obj;
+		if (captainName == null) {
+			if (other.captainName != null)
+				return false;
+		} else if (!captainName.equals(other.captainName))
+			return false;
+		if (cargo != other.cargo)
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (origin == null) {
+			if (other.origin != null)
+				return false;
+		} else if (!origin.equals(other.origin))
+			return false;
+		if (shipClass == null) {
+			if (other.shipClass != null)
+				return false;
+		} else if (!shipClass.equals(other.shipClass))
+			return false;
+		if (shipName == null) {
+			if (other.shipName != null)
+				return false;
+		} else if (!shipName.equals(other.shipName))
+			return false;
+		return true;
+	}
+
 }

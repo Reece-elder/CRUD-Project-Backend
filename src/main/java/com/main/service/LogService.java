@@ -8,15 +8,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.main.exceptions.LogNotFoundException;
 import com.main.persistence.domain.Log;
 import com.main.persistence.domain.LogRepo;
 
 @Service
-public class ShipLogService {
+public class LogService {
 
 	private LogRepo repo;
 
-	public ShipLogService(LogRepo repo) {
+	public LogService(LogRepo repo) {
 		super();
 		this.repo = repo;
 	}
@@ -35,7 +36,7 @@ public class ShipLogService {
 	}
 
 	public Log updateLog(@RequestBody Log log, @PathParam("id") Long id) {
-		Log oldLog = this.repo.findById(id).get();
+		Log oldLog = this.repo.findById(id).orElseThrow(() -> new LogNotFoundException());
 
 		oldLog.setCaptainName(log.getCaptainName());
 		oldLog.setShipName(log.getShipName());
