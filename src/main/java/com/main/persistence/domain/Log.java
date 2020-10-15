@@ -85,6 +85,18 @@ public class Log {
 	}
 
 	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((captainName == null) ? 0 : captainName.hashCode());
+		result = prime * result + cargo;
+		result = prime * result + ((origin == null) ? 0 : origin.hashCode());
+		result = prime * result + ((shipClass == null) ? 0 : shipClass.hashCode());
+		result = prime * result + ((shipName == null) ? 0 : shipName.hashCode());
+		return result;
+	}
+
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -99,11 +111,6 @@ public class Log {
 		} else if (!captainName.equals(other.captainName))
 			return false;
 		if (cargo != other.cargo)
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
 			return false;
 		if (origin == null) {
 			if (other.origin != null)
