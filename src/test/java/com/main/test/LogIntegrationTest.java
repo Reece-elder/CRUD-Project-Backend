@@ -97,6 +97,34 @@ public class LogIntegrationTest {
 	}
 
 	@Test
+	void testSortData() throws Exception {
+		sorting("/getAll/sort/shipAsc");
+		sorting("/getAll/sort/shipDesc");
+		sorting("/getAll/sort/captainAsc");
+		sorting("/getAll/sort/captainDesc");
+		sorting("/getAll/sort/classAsc");
+		sorting("/getAll/sort/classDesc");
+		sorting("/getAll/sort/originAsc");
+		sorting("/getAll/sort/originDesc");
+		sorting("/getAll/sort/cargoAsc");
+		sorting("/getAll/sort/cargoDesc");
+	}
+
+	void sorting(String url) throws Exception {
+
+		testLog.setId(1l);
+		List<Log> logArray = new ArrayList<>();
+		logArray.add(testLog);
+		String responseBody = this.mapper.writeValueAsString(logArray);
+
+		RequestBuilder request = get(url);
+		ResultMatcher checkStatus = status().isOk();
+		ResultMatcher checkBody = content().json(responseBody);
+
+		this.mockMVC.perform(request).andExpect(checkStatus).andExpect(checkBody);
+	}
+
+	@Test
 	void testUpdate() throws Exception {
 
 		String requestBody = this.mapper.writeValueAsString(testLog);
