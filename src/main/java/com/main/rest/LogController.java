@@ -34,6 +34,56 @@ public class LogController {
 		return ResponseEntity.ok(this.service.getAll());
 	}
 
+	@GetMapping("getAll/sort/shipAsc")
+	public ResponseEntity<List<Log>> getAllSortShipNameAsc() {
+		return ResponseEntity.ok(this.service.getAllSortShipNameAsc());
+	}
+
+	@GetMapping("getAll/sort/shipDesc")
+	public ResponseEntity<List<Log>> getAllSortShipNameDesc() {
+		return ResponseEntity.ok(this.service.getAllSortShipNameDesc());
+	}
+
+	@GetMapping("getAll/sort/captainAsc")
+	public ResponseEntity<List<Log>> getAllSortCaptainNameAsc() {
+		return ResponseEntity.ok(this.service.getAllSortCaptainNameAsc());
+	}
+
+	@GetMapping("getAll/sort/captainDesc")
+	public ResponseEntity<List<Log>> getAllSortCaptainNameDesc() {
+		return ResponseEntity.ok(this.service.getAllSortCaptainNameDesc());
+	}
+
+	@GetMapping("getAll/sort/classAsc")
+	public ResponseEntity<List<Log>> getAllSortShipClassAsc() {
+		return ResponseEntity.ok(this.service.getAllSortShipClassAsc());
+	}
+
+	@GetMapping("getAll/sort/classDesc")
+	public ResponseEntity<List<Log>> getAllSortShipClassDesc() {
+		return ResponseEntity.ok(this.service.getAllSortShipClassDesc());
+	}
+
+	@GetMapping("getAll/sort/originAsc")
+	public ResponseEntity<List<Log>> getAllSortOriginAsc() {
+		return ResponseEntity.ok(this.service.getAllSortOriginAsc());
+	}
+
+	@GetMapping("getAll/sort/originDesc")
+	public ResponseEntity<List<Log>> getAllSortOriginDesc() {
+		return ResponseEntity.ok(this.service.getAllSortOriginDesc());
+	}
+
+	@GetMapping("getAll/sort/cargoAsc")
+	public ResponseEntity<List<Log>> getAllSortCargoAsc() {
+		return ResponseEntity.ok(this.service.getAllSortCargoAsc());
+	}
+
+	@GetMapping("getAll/sort/cargoDesc")
+	public ResponseEntity<List<Log>> getAllSortCargoDesc() {
+		return ResponseEntity.ok(this.service.getAllSortCargoDesc());
+	}
+
 	@PostMapping("/create")
 	public ResponseEntity<Log> createNewLog(@RequestBody Log log) {
 		return new ResponseEntity<Log>(this.service.createNewLog(log), HttpStatus.CREATED);

@@ -26,7 +26,45 @@ public class LogService {
 		return this.repo.findAll();
 	}
 
-//	public List<Log>
+	public List<Log> getAllSortShipNameAsc() {
+		return this.repo.findByOrderByShipNameAsc();
+	}
+
+	public List<Log> getAllSortShipNameDesc() {
+		return this.repo.findByOrderByShipNameDesc();
+	}
+
+	public List<Log> getAllSortCaptainNameAsc() {
+		return this.repo.findByOrderByCaptainNameAsc();
+	}
+
+	public List<Log> getAllSortCaptainNameDesc() {
+		return this.repo.findByOrderByCaptainNameDesc();
+	}
+
+	public List<Log> getAllSortShipClassAsc() {
+		return this.repo.findByOrderByShipClassAsc();
+	}
+
+	public List<Log> getAllSortShipClassDesc() {
+		return this.repo.findByOrderByShipClassDesc();
+	}
+
+	public List<Log> getAllSortOriginAsc() {
+		return this.repo.findByOrderByOriginAsc();
+	}
+
+	public List<Log> getAllSortOriginDesc() {
+		return this.repo.findByOrderByOriginDesc();
+	}
+
+	public List<Log> getAllSortCargoAsc() {
+		return this.repo.findByOrderByCargoAsc();
+	}
+
+	public List<Log> getAllSortCargoDesc() {
+		return this.repo.findByOrderByCargoDesc();
+	}
 
 	public Log createNewLog(@RequestBody Log log) {
 		return this.repo.save(log);
