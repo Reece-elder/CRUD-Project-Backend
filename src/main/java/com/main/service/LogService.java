@@ -26,6 +26,8 @@ public class LogService {
 		return this.repo.findAll();
 	}
 
+//	public List<Log>
+
 	public Log createNewLog(@RequestBody Log log) {
 		return this.repo.save(log);
 	}
