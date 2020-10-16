@@ -1,9 +1,9 @@
 INSERT INTO `log`
-(`captain_name`,
+(`ship_name`,
 `cargo`,
 `origin`,
 `ship_class`,
-`ship_name`)
+`captain_name`)
 
 VALUES
 (
